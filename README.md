@@ -1,2 +1,7 @@
-# laurenra.github.io
-Documentation
+# How To documents
+A collection of guides explaining how to do many things
+
+## Video Editing
+[Video Editing and Splicing with ffmpeg](./ffmpeg.md)
+
+[Video Editing with LosslessCut](./LosslessCut.md)
