@@ -1,127 +1,132 @@
 # Import OBS Settings to Windows 11 from Mac OS
 
 ## Prerequisites
-[x] Install font files
+This assumes you have already downloaded and installed the OBS application.
 
-Go to \setup\Fonts\khula
-Double-click KhulaTitle-regular.otf to install it.
+### Unzip the OBS settings file
+This has all the scenes, profiles, assets, fonts, and other files needed.
+
+### Install font files
+- Go to \setup\Fonts\khula
+- Double-click KhulaTitle-regular.otf to install it.
    
-Go to \setup\Fonts\baskervald-adf-std-font
-Double-click BaskervaldADFTitleStd.otf to install it. 
+- Go to \setup\Fonts\baskervald-adf-std-font
+- Double-click BaskervaldADFTitleStd.otf to install it.
 
-[x] Install OBS
-[x] Install Advanced Scene Switcher plugin
+( Old instructions. Install these fonts
 
+- BaskervaldADFTitleStd.otf
+- KhulaTitle-regular.otf
+- Trajan Pro 3 Regular.otf
+- TrajanPro3Light.ttf
+
+NOTE: if you don't install the fonts, the title text in the lower 
+two-thirds bar will not look right.
+
+### Install Advanced Scene Switcher plugin
 Download the latest version from the Internet and install it.
 
-https://github.com/WarmUpTill/SceneSwitcher/releases.
+https://github.com/WarmUpTill/SceneSwitcher/releases
 
-## Set up OBS for Windows from Zip file
-1. Make sure the OBS application is installed.
+### Install Shaderfilter plugin
+Make sure OBS is closed. Download the latest version from the 
+Internet and install it.
 
-2. Unzip
+https://github.com/exeldro/obs-shaderfilter/releases
 
-3. Copy OBS directory to the root, C:\, so the directory is C:\OBS
+### Install VB Cable driver
+Install it from the setup/Audio/VBCABLE_Driver_Pack43 directory. 
+The saved profiles expect to route audio (monitor ouptupt) to the 
+VBCable virtual cable which you can input to other applications 
+like Zoom.
 
-   Overwrite all files. If you don't want to lose anything, move or 
-   copy the existing C:\OBS directory somewhere else.
+Download the latest from here:
 
-4. Install font files
+https://vb-audio.com/Cable/
 
-   Go to \setup\Fonts\khula
-   Double-click KhulaTitle-regular.otf to install it.
-   
-   Go to \setup\Fonts\baskervald-adf-std-font
-   Double-click BaskervaldADFTitleStd.otf to install it. 
+### Install PTZ Controller app from PTZOptics
+This is not necessary but is a convenient way to control a PTZ
+camera from the desktop.
 
-5. Install Advanced Scene Switcher plugin
+Install it from the setup/PTZControl/PTZOptics PTZ Controller Windows 1.4.1.zip file. 
 
-   Go to \plugins\Windows and double-click 
-   advanced-scene-switcher-1.31.0-windows-x64-Installer.exe to install it 
-   or download the latest version from the Internet and install it.
+Download the latest desktop controller from here:
 
-6. Install Shaderfilter plugin
+https://docs.ptzoptics.com/apps/legacy-apps/
 
-   Make sure OBS is closed.
-   Go to \plugins\Windows and double-click 
-   obs-shaderfilter-2.5.1-windows-installer.exe to install it 
-   or download the latest version from the Internet and install it.
+Download the OBS plugin from here:
 
+https://github.com/PTZOptics/OBSPlugin
 
-7. Edit the scene(s) .json file(s) under the \scenes\ directories.
+There are other plugins and desktop controllers you can get.
 
-   Search for "/Users/laurenanderson" and replace with "C:"
+## 1 Copy unzipped file directory
+Copy OBS directory to the root, C:\, so the directory is C:\OBS
+
+Overwrite all files. If you don't want to lose anything, move or 
+copy the existing C:\OBS directory somewhere else.
+
+## 2 Edit the scene .json file
+Edit the scene(s) .json file(s) under the \scenes\ directories.
+
+### Replace directory paths
+Search for "/Users/laurenanderson" and replace with "C:"
  
-   Make sure all /OBS paths are prefixed with C:/, for example:
+Make sure all /OBS paths are prefixed with C:/, for example:
 
-   C:/OBS/scenes/Sacrament-HD/images/BottomThirds-HD-BlueBar-880y-135h.png
+```
+C:/OBS/scenes/Sacrament-HD/images/BottomThirds-HD-BlueBar-880y-135h.png
+```
 
-   If they are not prefixed with C:/ then search and replace the prefix 
-   directory path with C:/ so it looks like the example above and save
-   the file.
+If they are not prefixed with C:/ then search and replace the prefix 
+directory path with C:/ so it looks like the example above and save
+the file.
    
-   Note: on Mac OS and Windows, OBS uses slashes (/) for file paths, 
-   which is the convention on all Linux and Mac operating systems, instead 
-   of backslashes (\), which is the convention on Windows.
-   DO NOT USE BACKSLASHES IN FILE PATHS.
+Note: on Mac OS and Windows, OBS uses slashes (/) for file paths, 
+which is the convention on all Linux and Mac operating systems, instead 
+of backslashes (\), which is the convention on Windows.
+DO NOT USE BACKSLASHES IN FILE PATHS.
 
+### Replace directory path for shader_file_name
+In the scene .json file, search for shader_file_name and change the 
+directory path to match where the shader filter is.
    
-8. In the scene .json file, search for shader_file_name and change the 
-   directory path to match where the shader filter is.
+Search for "/Users/laurenanderson" and replace with "C:"
    
-   Search for "/Users/laurenanderson" and replace with "C:"
+Mac OS
+/Users/{username}/Library/Application Support/obs-studio/plugins/obs-shaderfilter.plugin/Contents/Resources/examples/drop_shadow.shader
    
-   Mac OS
-   /Users/{username}/Library/Application Support/obs-studio/plugins/obs-shaderfilter.plugin/Contents/Resources/examples/drop_shadow.shader
-   
-   Windows 11
-   C:/Program Files/obs-studio/data/obs-plugins/obs-shaderfilter/examples/drop_shadow.shader
+Windows 11
+C:/Program Files/obs-studio/data/obs-plugins/obs-shaderfilter/examples/drop_shadow.shader
 
+## 3 Edit basic.ini file
+Edit the basic.ini under the scenes/profile/(name) directory
 
-9. Edit the basic.ini file under the scenes/profile/(name) directory
+Make sure all file paths are prefixed with C:\ and point to valid
+directories, for example:
 
-   Make sure all file paths are prefixed with C:\ and point to valid
-   directories, for example:
+```
+FilePath=C:\\Users\\myUser\\Videos\\OBS
+RecFilePath=C:\\Users\\myUser\\Videos\\OBS
+FFFilePath=C:\\Users\\myUser\\Videos\\OBS
+```
 
-   FilePath=C:\\Users\\myUser\\Videos\\OBS
-   RecFilePath=C:\\Users\\myUser\\Videos\\OBS
-   FFFilePath=C:\\Users\\myUser\\Videos\\OBS
+## 4 Import Scene
+If you already have the Scene in OBS, open OBS and delete the Scene 
+that will be replaced. 
 
-   If you make changes, save the file.
+Import the Scene by going to Scene Collection > Import > Collection Path 
+and finding the .json file for that scene under OBS/scenes.
 
+## 5 Import Profile
+If you already have the Profile in OBS, open OBS and delete the Profile 
+that will be replaced.
 
-10. If you already have the Profile(s) and Scene(s) in OBS, 
-   open OBS and delete the Profile(s) and Scene(s) you will
-   replace from the Zip file. 
-
-11. Open OBS and import the Profile(s) and Scene(s).
-
-   Import the Profile(s) by going to Profile > Import and finding the Profile
-   directory under OBS/scenes/(scene name)/profile.
-
-   Import the Scene(s) by going to Scene Collection > Import > Collection Path 
-   and finding the .json file for that scene under OBS/scenes.
+Import the Profile by going to Profile > Import and finding the Profile
+directory under OBS/scenes/(scene name)/profile.
 
 NOTE: if you put the OBS directory somewhere other than the root, C:/, follow
-the same instructions in steps 3 and 4 and replace the root path.
-
-12. If there is an assets/Fonts directory, install all these fonts:
-   
-   BaskervaldADFTitleStd.otf
-   KhulaTitle-regular.otf
-   Trajan Pro 3 Regular.otf
-   TrajanPro3Light.ttf
-
-   NOTE: if you don't install the fonts, the title text in the lower 
-   two-thirds bar will not look right.
-
-13. If you haven't already installed the VB Cable driver, install it from
-   the setup/Audio/VBCABLE_Driver_Pack43 directory. The saved profiles expect 
-   to route audio to the VBCable which you can input to other applications
-   like Zoom.
-
-14. If you haven't already installed the PTZ Controller app, install it from 
-   the setup/PTZControl/PTZOptics PTZ Controller Windows 1.4.1.zip file. 
+the same instructions in steps 4 and 5 and replace the root path.
 
 
 
