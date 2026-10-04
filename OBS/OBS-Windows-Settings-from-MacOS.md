@@ -7,18 +7,19 @@ This assumes you have already downloaded and installed the OBS application.
 This has all the scenes, profiles, assets, fonts, and other files needed.
 
 ### Install font files
-- Go to \setup\Fonts\khula
-- Double-click KhulaTitle-regular.otf to install it.
+Go to **\setup\Fonts\khula**
+
+Double-click KhulaTitle-regular.otf to install it.
    
 - Go to \setup\Fonts\baskervald-adf-std-font
 - Double-click BaskervaldADFTitleStd.otf to install it.
 
-( Old instructions. Install these fonts
+_Old instructions said to install these fonts_
 
-- BaskervaldADFTitleStd.otf
-- KhulaTitle-regular.otf
-- Trajan Pro 3 Regular.otf
-- TrajanPro3Light.ttf
+- _BaskervaldADFTitleStd.otf_
+- _KhulaTitle-regular.otf_
+- _Trajan Pro 3 Regular.otf (used in Welcome splash screen)_
+- _TrajanPro3Light.ttf (used in Welcome splash screen)_
 
 NOTE: if you don't install the fonts, the title text in the lower 
 two-thirds bar will not look right.
@@ -118,6 +119,26 @@ that will be replaced.
 Import the Scene by going to Scene Collection > Import > Collection Path 
 and finding the .json file for that scene under OBS/scenes.
 
+Many of the settings exported from Mac OS don't import properly into Windows 11.
+They will have to be fixed manually.
+
+### Fix Missing Files
+Switch to the imported scene. If it shows a missing file, go to the Source in the 
+Scene and reselect the file.
+
+### Reselect Video Sources
+The video source options are different between Mac OS and Windows. The ones that 
+are invalid will be red.
+
+1. Go to a scene, Add Source, select Video Capture Device.
+2. Copy the name of the old source.
+3. Rename the old source with "-old" on the end.
+4. Rename the new source with the copied name.
+5. Check the old source for filters. If there are any, recreate them on the new source.
+6. Copy the new source (Ctrl+C) to all the scenes that use it and paste it (Ctrl+V) as a reference.
+7. Move it to the same place in the scene as the old source.
+8. Delete the old source from the scene.
+
 ## 5 Import Profile
 If you already have the Profile in OBS, open OBS and delete the Profile 
 that will be replaced.
@@ -128,5 +149,28 @@ directory under OBS/scenes/(scene name)/profile.
 NOTE: if you put the OBS directory somewhere other than the root, C:/, follow
 the same instructions in steps 4 and 5 and replace the root path.
 
+### Title Fonts
+- Group Y-Position = 887 px
+- Group Height = 193 px
+
+#### Title (Mac OS)
+
+|            | Font                     | Size  | X Pos  | Y Pos  | Height |
+| ---------- | ------------------------ | ----: | -----: | -----: | -----: |
+| Title      | Baskervald ADF Title Std | 56 pt | 112 px | 3 px   | 55 px  |
+| Subtitle   | Khula Title              | 32 pt | 112 px | 78 px  | 30 px  |
+
+#### Title (Windows)
+
+|            | Font                     | Size  | X Pos  | Y Pos  | Height |
+| ---------- | ------------------------ | ----: | -----: | -----: | -----: |
+| Title      | Baskervald ADF Title Std | 63 pt | 112 px | 15 px  | 64 px  |
+| Subtitle   | Khula Title Regular      | 43 pt | 112 px | 78 px  | 44 px  |
+
+
+Blue bar bottom
+1000 px
+950 px
+887 px
 
 
