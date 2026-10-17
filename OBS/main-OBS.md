@@ -1,7 +1,11 @@
 # OBS
 Open Broadcast Studio (OBS) is a video streaming application on Windows and Mac OS.
 
+## Windows
+[Download OBS settings to Windows 11](OBS-Windows-Setup.md)
+
 [Import OBS Settings to Windows 11 from Mac OS](./OBS-Windows-Settings-from-MacOS.md)
 
+## Mac OS
 [Mac OS Scenes and Settings](OBS-MacOS-Settings.md)
 (under construction...)
