@@ -1,5 +1,6 @@
-# How To documents
 A collection of guides explaining how to do many things.
+
+This is published to [laurenra.github.io](https://laurenra.github.io)
 
 ## Video Editing
 [Video Editing and Splicing with ffmpeg](./ffmpeg.md)
