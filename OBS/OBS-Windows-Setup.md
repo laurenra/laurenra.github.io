@@ -25,13 +25,13 @@ will not look right.
 ### Install Advanced Scene Switcher plugin
 Download the latest version from the Internet and install it.
 
-https://github.com/WarmUpTill/SceneSwitcher/releases
+[https://github.com/WarmUpTill/SceneSwitcher/releases](https://github.com/WarmUpTill/SceneSwitcher/releases)
 
 ### Install Shaderfilter plugin
 Make sure OBS is closed. Download the latest version from the Internet and
 install it.
 
-https://github.com/exeldro/obs-shaderfilter/releases
+[https://github.com/exeldro/obs-shaderfilter/releases](https://github.com/exeldro/obs-shaderfilter/releases)
 
 ### Install VB Cable driver
 Install it from the setup/Audio/VBCABLE_Driver_Pack43 directory. The saved
@@ -40,7 +40,7 @@ cable which you can input to other applications like Zoom.
 
 Download the latest from here:
 
-https://vb-audio.com/Cable/
+[https://vb-audio.com/Cable/](https://vb-audio.com/Cable/)
 
 ### Install PTZ Controller app from PTZOptics
 This is not necessary but is a convenient way to control a PTZ camera from
@@ -50,11 +50,11 @@ Install it from the setup/PTZControl/PTZOptics PTZ Controller Windows 1.4.1.zip 
 
 Download the latest desktop controller from here:
 
-https://docs.ptzoptics.com/apps/legacy-apps/
+[https://docs.ptzoptics.com/apps/legacy-apps/](https://docs.ptzoptics.com/apps/legacy-apps/)
 
 Download the OBS plugin from here:
 
-https://github.com/PTZOptics/OBSPlugin
+[https://github.com/PTZOptics/OBSPlugin](https://github.com/PTZOptics/OBSPlugin)
 
 There are other plugins and desktop controllers you can use instead.
 
